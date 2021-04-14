@@ -24,7 +24,7 @@ event zeek_init()
                                 {
                         		local http_res_num :int = result["http response"]$num;
                         		local error_res_num :int = result["404 response"]$num;
-                            		local unique_res_num :int = result["unique 404 response"]$num;
+                            		local unique_res_num :int = result["unique 404 response"]$unique;
                             	if(error_res_num>2 && error_res_num>0.2*http_res_num && unique_res_num/error_res_num>0.5)
                             	{
                             		print fmt("%s is the orig_h, %d is the count of 404 response , %d is the unique count of url response 404",
